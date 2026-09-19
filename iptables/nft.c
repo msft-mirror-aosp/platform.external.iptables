@@ -445,13 +445,13 @@ static const struct builtin_table xtables_ipv4[NFT_TABLE_MAX] = {
 			{
 				.name	= "PREROUTING",
 				.type	= "filter",
-				.prio	= -300,	/* NF_IP_PRI_RAW */
+				.prio	= NF_IP_PRI_RAW,
 				.hook	= NF_INET_PRE_ROUTING,
 			},
 			{
 				.name	= "OUTPUT",
 				.type	= "filter",
-				.prio	= -300,	/* NF_IP_PRI_RAW */
+				.prio	= NF_IP_PRI_RAW,
 				.hook	= NF_INET_LOCAL_OUT,
 			},
 		},
@@ -463,31 +463,31 @@ static const struct builtin_table xtables_ipv4[NFT_TABLE_MAX] = {
 			{
 				.name	= "PREROUTING",
 				.type	= "filter",
-				.prio	= -150,	/* NF_IP_PRI_MANGLE */
+				.prio	= NF_IP_PRI_MANGLE,
 				.hook	= NF_INET_PRE_ROUTING,
 			},
 			{
 				.name	= "INPUT",
 				.type	= "filter",
-				.prio	= -150,	/* NF_IP_PRI_MANGLE */
+				.prio	= NF_IP_PRI_MANGLE,
 				.hook	= NF_INET_LOCAL_IN,
 			},
 			{
 				.name	= "FORWARD",
 				.type	= "filter",
-				.prio	= -150,	/* NF_IP_PRI_MANGLE */
+				.prio	= NF_IP_PRI_MANGLE,
 				.hook	= NF_INET_FORWARD,
 			},
 			{
 				.name	= "OUTPUT",
 				.type	= "route",
-				.prio	= -150,	/* NF_IP_PRI_MANGLE */
+				.prio	= NF_IP_PRI_MANGLE,
 				.hook	= NF_INET_LOCAL_OUT,
 			},
 			{
 				.name	= "POSTROUTING",
 				.type	= "filter",
-				.prio	= -150,	/* NF_IP_PRI_MANGLE */
+				.prio	= NF_IP_PRI_MANGLE,
 				.hook	= NF_INET_POST_ROUTING,
 			},
 		},
@@ -499,19 +499,19 @@ static const struct builtin_table xtables_ipv4[NFT_TABLE_MAX] = {
 			{
 				.name	= "INPUT",
 				.type	= "filter",
-				.prio	= 0,	/* NF_IP_PRI_FILTER */
+				.prio	= NF_IP_PRI_FILTER,
 				.hook	= NF_INET_LOCAL_IN,
 			},
 			{
 				.name	= "FORWARD",
 				.type	= "filter",
-				.prio	= 0,	/* NF_IP_PRI_FILTER */
+				.prio	= NF_IP_PRI_FILTER,
 				.hook	= NF_INET_FORWARD,
 			},
 			{
 				.name	= "OUTPUT",
 				.type	= "filter",
-				.prio	= 0,	/* NF_IP_PRI_FILTER */
+				.prio	= NF_IP_PRI_FILTER,
 				.hook	= NF_INET_LOCAL_OUT,
 			},
 		},
@@ -523,19 +523,19 @@ static const struct builtin_table xtables_ipv4[NFT_TABLE_MAX] = {
 			{
 				.name	= "INPUT",
 				.type	= "filter",
-				.prio	= 150,	/* NF_IP_PRI_SECURITY */
+				.prio	= NF_IP_PRI_SECURITY,
 				.hook	= NF_INET_LOCAL_IN,
 			},
 			{
 				.name	= "FORWARD",
 				.type	= "filter",
-				.prio	= 150,	/* NF_IP_PRI_SECURITY */
+				.prio	= NF_IP_PRI_SECURITY,
 				.hook	= NF_INET_FORWARD,
 			},
 			{
 				.name	= "OUTPUT",
 				.type	= "filter",
-				.prio	= 150,	/* NF_IP_PRI_SECURITY */
+				.prio	= NF_IP_PRI_SECURITY,
 				.hook	= NF_INET_LOCAL_OUT,
 			},
 		},
@@ -547,25 +547,25 @@ static const struct builtin_table xtables_ipv4[NFT_TABLE_MAX] = {
 			{
 				.name	= "PREROUTING",
 				.type	= "nat",
-				.prio	= -100, /* NF_IP_PRI_NAT_DST */
+				.prio	= NF_IP_PRI_NAT_DST,
 				.hook	= NF_INET_PRE_ROUTING,
 			},
 			{
 				.name	= "INPUT",
 				.type	= "nat",
-				.prio	= 100, /* NF_IP_PRI_NAT_SRC */
+				.prio	= NF_IP_PRI_NAT_SRC,
 				.hook	= NF_INET_LOCAL_IN,
 			},
 			{
 				.name	= "POSTROUTING",
 				.type	= "nat",
-				.prio	= 100, /* NF_IP_PRI_NAT_SRC */
+				.prio	= NF_IP_PRI_NAT_SRC,
 				.hook	= NF_INET_POST_ROUTING,
 			},
 			{
 				.name	= "OUTPUT",
 				.type	= "nat",
-				.prio	= -100, /* NF_IP_PRI_NAT_DST */
+				.prio	= NF_IP_PRI_NAT_DST,
 				.hook	= NF_INET_LOCAL_OUT,
 			},
 		},
